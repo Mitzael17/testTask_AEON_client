@@ -208,7 +208,7 @@ export async function account(global_state) {
 
        event.preventDefault();
 
-       if(!default_validation(input_name, input_password) || form_states.is_loading) return;
+       if(form_states.is_loading || !default_validation(input_name, input_password, form_states)) return;
 
        form_states.is_loading = true;
 
